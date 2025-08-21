@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hulk Mini Project</title>
+    <style>
+    body {
+        font-family: "Impact", sans-serif;
+        background: radial-gradient(circle at center, #003300, #001100);
+        color: #e0ffe0;
+        padding: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        color: #76ff03; 
+        text-shadow: 0 0 15px #76ff03, 0 0 25px #4caf50, 0 0 40px #00ff00;
+        font-size: 40px;
+        font-weight: bold;
+        }
+
+    .box {
+        background: rgba(0, 40, 0, 0.95);
+        padding: 20px;
+        border-radius: 15px;
+        max-width: 420px;
+        margin: auto;
+        box-shadow: 0 0 30px rgba(118, 255, 3, 0.4);
+        border: 3px solid #76ff03;
+    }
+
+    label {
+        display: block;
+        margin-top: 10px;
+        color: #b388ff; 
+        font-weight: bold;
+        text-shadow: 0 0 5px #76ff03;
+    }
+
+    input {
+        width: 380px;
+        padding: 10px;
+        margin-top: 5px;
+        border: 2px solid #76ff03;
+        border-radius: 8px;
+        background: #0a1f0a;
+        color: #fff;
+        outline: none;
+        transition: 0.3s;
+    }
+
+    input:focus {
+        border-color: #b388ff;
+        box-shadow: 0 0 12px #b388ff;
+    }
+
+    button {
+        margin-top: 15px;
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 10px;
+        background: linear-gradient(135deg, #1b5e20, #33691e);
+        color: #b388ff;
+        font-weight: bold;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-shadow: 0 0 8px #76ff03;
+    }
+
+    button:hover {
+        background: linear-gradient(135deg, #2e7d32, #1b5e20);
+        transform: scale(1.05);
+        box-shadow: 0 0 20px #76ff03;
+    }
+
+    .output {
+        margin-top: 20px;
+        background: #002200;
+        padding: 15px;
+        border-radius: 10px;
+        border: 2px solid #76ff03;
+        box-shadow: 0 0 20px rgba(118,255,3,0.3);
+        color: #e0ffe0;
+        font-family: monospace;
+        white-space: pre-wrap;
+        transition: 0.3s;
+    }
+
+    .smash {
+        animation: smashEffect 0.5s ease-in-out 2;
+    }
+
+    @keyframes smashEffect {
+        0% { transform: translate(0, 0) rotate(0); }
+        20% { transform: translate(-5px, 5px) rotate(-2deg); }
+        40% { transform: translate(5px, -5px) rotate(2deg); }
+        60% { transform: translate(-5px, 5px) rotate(-1deg); }
+        80% { transform: translate(5px, -5px) rotate(1deg); }
+        100% { transform: translate(0, 0) rotate(0); }
+    }
+
+    .glow {
+        animation: glowPulse 1.5s infinite alternate;
+    }
+
+    @keyframes glowPulse {
+        from { box-shadow: 0 0 10px #76ff03; }
+        to { box-shadow: 0 0 30px #76ff03; }
+    }
+    </style>
+</head>
+<body>
+
+    <h1>💥 Mini Project: Fruit & Number Analyzer 💚</h1>
+    <div class="box glow">
+            <label>Name:</label>
+            <input type="text" id="name">
+
+            <label>Number:</label>
+            <input type="number" id="number">
+
+            <label>Sentence:</label>
+            <input type="text" id="sentence">
+
+            <label>Favorite Fruit #1:</label>
+            <input type="text" id="fruit1">
+
+            <label>Favorite Fruit #2:</label>
+            <input type="text" id="fruit2">
+
+            <label>Favorite Fruit #3:</label>
+            <input type="text" id="fruit3">
+
+            <button onclick="showResults()">HULK SMASH!</button>
+            <button onclick="clearResults()">RESET</button>
+
+            <div class="output" id="results">...</div>
+        </div>
+
+    <script>
+    const BASE_NUMBER = 10;
+
+    function greet(userName) {
+          return `HULK say: Hello ${userName.toUpperCase()}!`;
+    }
+
+    function showResults() {
+        let userName = document.getElementById("name").value;
+        let userNumber = Number(document.getElementById("number").value);
+        let userSentence = document.getElementById("sentence").value;
+
+        let fruit1 = document.getElementById("fruit1").value;
+        let fruit2 = document.getElementById("fruit2").value;
+        let fruit3 = document.getElementById("fruit3").value;
+        let fruits = [fruit1, fruit2, fruit3];
+
+        let output = "";
+
+        output += "💪 1. Variables & Arithmetic:\n";
+        output += `Base: ${BASE_NUMBER}, User: ${userNumber}\n`;
+        output += `${BASE_NUMBER} + ${userNumber} = ${BASE_NUMBER + userNumber}\n`;
+        output += `${BASE_NUMBER} - ${userNumber} = ${BASE_NUMBER - userNumber}\n`;
+        output += `${BASE_NUMBER} × ${userNumber} = ${BASE_NUMBER * userNumber}\n`;
+        output += `${BASE_NUMBER} ÷ ${userNumber} = ${userNumber !== 0 ? BASE_NUMBER / userNumber : "ERROR (SMASHED!)"}\n\n`;
+
+        output += "🗣️ 2. Strings:\n";
+        output += "Upper: " + userSentence.toUpperCase() + "\n";
+        output += "Lower: " + userSentence.toLowerCase() + "\n\n";
+
+        output += "⚖️ 3. Positive/Negative:\n";
+        if (userNumber >= 0) {
+            output += userNumber + " is Positive\n";
+        } else {
+            output += userNumber + " is Negative\n";
+        }
+        output += (userNumber >= 0) ? userNumber + " is Positive\n\n" : userNumber + " is Negative\n\n";
+
+        output += "🔢 4. Loop (1 to " + userNumber + "):\n";
+        for (let i = 1; i <= userNumber; i++) {
+            output += i + " ";
+        }
+        output += "\n\n";
+
+        output += "🍎 5. Hulk Greeting & Fruits:\n";
+        output += greet(userName) + "\n";
+        output += "Fruits: " + fruits.join(", ");
+
+        let resultsDiv = document.getElementById("results");
+        resultsDiv.innerText = output;
+        resultsDiv.classList.add("smash"); // Add smash effect
+        setTimeout(() => resultsDiv.classList.remove("smash"), 1000);
+    }
+
+    function clearResults() {
+        document.getElementById("results").innerText = "...";
+        document.getElementById("name").value = "";
+        document.getElementById("number").value = "";
+        document.getElementById("sentence").value = "";
+        document.getElementById("fruit1").value = "";
+        document.getElementById("fruit2").value = "";
+        document.getElementById("fruit3").value = "";
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spiderman Mini Project</title>
+    <style>
+        body {
+            font-family: "Trebuchet MS", sans-serif;
+            background: linear-gradient(135deg, #0d47a1, #d32f2f);
+            color: #fff;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffeb3b; 
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+            font-weight: bold;
+        }
+
+        .box {
+            background: #111;
+            padding: 20px;
+            border-radius: 15px;
+            max-width: 420px;
+            margin: auto;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.7);
+            border: 2px solid #d32f2f; 
+            }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #ffeb3b;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+        }
+
+        input {
+            width: 380px;
+            padding: 10px;
+            margin-top: 5px;
+            border: 2px solid #1565c0;
+            border-radius: 8px;
+            background: #222;
+            color: #fff;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: #ff1744;
+            box-shadow: 0 0 8px #ff1744;
+        }
+
+        button {
+            margin-top: 15px;
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #d32f2f, #0d47a1);
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #b71c1c, #1565c0);
+            transform: scale(1.05);
+            box-shadow: 0 0 12px #ff1744;
+        }
+
+        .output {
+            margin-top: 20px;
+            background: #222;
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid #1565c0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.7);
+            color: #fff;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🕷️ Mini Project: Fruit & Number Analyzer 🕸️</h1>
+    <div class="box">
+        <label>Name:</label>
+        <input type="text" id="name">
+
+        <label>Number:</label>
+        <input type="number" id="number">
+
+        <label>Sentence:</label>
+        <input type="text" id="sentence">
+
+        <label>Favorite Fruit #1:</label>
+        <input type="text" id="fruit1">
+
+        <label>Favorite Fruit #2:</label>
+        <input type="text" id="fruit2">
+
+        <label>Favorite Fruit #3:</label>
+        <input type="text" id="fruit3">
+
+        <button onclick="showResults()">= Click Results</button>
+        <button onclick="clearResults()">🧹 Clear</button>
+
+        <div class="output" id="results">...</div>
+    </div>
+
+    <script>
+        const BASE_NUMBER = 10;
+
+        function greet(userName) {
+            return `Hello, ${userName}!`;
+        }
+
+        function showResults() {
+            let userName = document.getElementById("name").value;
+            let userNumber = Number(document.getElementById("number").value);
+            let userSentence = document.getElementById("sentence").value;
+
+            let fruit1 = document.getElementById("fruit1").value;
+            let fruit2 = document.getElementById("fruit2").value;
+            let fruit3 = document.getElementById("fruit3").value;
+            let fruits = [fruit1, fruit2, fruit3];
+
+            let output = "";
+
+            output += "🕷️ 1. Variables & Constants, Arithmetic:\n";
+            output += `Base Number: ${BASE_NUMBER}, User Number: ${userNumber}\n`;
+            output += `${BASE_NUMBER} + ${userNumber} = ${BASE_NUMBER + userNumber}\n`;
+            output += `${BASE_NUMBER} - ${userNumber} = ${BASE_NUMBER - userNumber}\n`;
+            output += `${BASE_NUMBER} × ${userNumber} = ${BASE_NUMBER * userNumber}\n`;
+            output += `${BASE_NUMBER} ÷ ${userNumber} = ${userNumber !== 0 ? BASE_NUMBER / userNumber : "undefined (division by 0)"}\n\n`;
+
+            output += "🕸️ 2. Strings & String methods:\n";
+            output += "Uppercase: " + userSentence.toUpperCase() + "\n";
+            output += "Lowercase: " + userSentence.toLowerCase() + "\n\n";
+
+            output += "⚡ 3. If Statement & Ternary Operator:\n";
+            if (userNumber >= 0) {
+                output += userNumber + " is Positive\n";
+            } else {
+                output += userNumber + " is Negative\n";
+            }
+            output += (userNumber >= 0) ? userNumber + " is Positive\n\n" : userNumber + " is Negative\n\n";
+
+            output += "🔢 4. Loops (1 to " + userNumber + "):\n";
+            for (let i = 1; i <= userNumber; i++) {
+                output += i + " ";
+            }
+            output += "\n\n";
+
+            output += "🍎 5. Functions & Arrays:\n";
+            output += greet(userName) + "\n";
+            output += "Favorite fruits: " + fruits.join(", ");
+
+            document.getElementById("results").innerText = output;
+        }
+
+        function clearResults() {
+            document.getElementById("results").innerText = "...";
+            document.getElementById("name").value = "";
+            document.getElementById("number").value = "";
+            document.getElementById("sentence").value = "";
+            document.getElementById("fruit1").value = "";
+            document.getElementById("fruit2").value = "";
+            document.getElementById("fruit3").value = "";
+        }
+    </script>
+</body>
+</html>
