@@ -1,182 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Batman Mini Project</title>
-    <style>
-        body {
-          font-family: "Trebuchet MS", sans-serif;
-          background: linear-gradient(135deg, #000000, #2c2c2c);
-          color: #f5f5f5;
-          padding: 20px;
-        }
-
-        h1 {
-          text-align: center;
-          color: #ffeb3b; /* Bat-signal yellow */
-          text-shadow: 2px 2px 8px rgba(255, 235, 59, 0.7);
-          font-weight: bold;
-        }
-
-        .box {
-          background: #111;
-          padding: 20px;
-          border-radius: 15px;
-          max-width: 420px;
-          margin: auto;
-          box-shadow: 0 4px 20px rgba(0,0,0,0.9);
-          border: 2px solid #444;
-        }
-
-        label {
-          display: block;
-          margin-top: 10px;
-          color: #ffeb3b;
-          font-weight: bold;
-          text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
-        }
-
-        input {
-          width: 380px;
-          padding: 10px;
-          margin-top: 5px;
-          border: 2px solid #333;
-          border-radius: 8px;
-          background: #222;
-          color: #fff;
-          outline: none;
-          transition: 0.3s;
-        }
-
-        input:focus {
-          border-color: #ffeb3b;
-          box-shadow: 0 0 10px #ffeb3b;
-        }
-
-        button {
-          margin-top: 15px;
-          width: 100%;
-          padding: 12px;
-          border: none;
-          border-radius: 10px;
-          background: linear-gradient(135deg, #212121, #000000);
-          color: #ffeb3b;
-          font-weight: bold;
-          font-size: 16px;
-          cursor: pointer;
-          transition: 0.3s;
-          text-transform: uppercase;
-          letter-spacing: 1px;
-        }
-
-        button:hover {
-          background: linear-gradient(135deg, #000000, #333333);
-          transform: scale(1.05);
-          box-shadow: 0 0 12px #ffeb3b;
-        }
-
-        .output {
-          margin-top: 20px;
-          background: #1c1c1c;
-          padding: 15px;
-          border-radius: 10px;
-          border: 2px solid #444;
-          box-shadow: 0 3px 15px rgba(0,0,0,0.8);
-          color: #f5f5f5;
-          font-family: monospace;
-          white-space: pre-wrap;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alforque - Mini Project (Batman Theme)</title>
+  <style>
+    body {
+      font-family: "Trebuchet MS", sans-serif;
+      background: linear-gradient(135deg, #000000, #2c2c2c);
+      color: #f5f5f5;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #ffeb3b;
+      text-shadow: 2px 2px 8px rgba(255, 235, 59, 0.7);
+      font-weight: bold;
+    }
+    .box {
+      background: #111;
+      padding: 20px;
+      border-radius: 15px;
+      max-width: 420px;
+      margin: auto;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.9);
+      border: 2px solid #444;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      color: #ffeb3b;
+      font-weight: bold;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+    }
+    input {
+      width: 380px;
+      padding: 10px;
+      margin-top: 5px;
+      border: 2px solid #333;
+      border-radius: 8px;
+      background: #222;
+      color: #fff;
+      outline: none;
+      transition: 0.3s;
+    }
+    input:focus {
+      border-color: #ffeb3b;
+      box-shadow: 0 0 10px #ffeb3b;
+    }
+    button {
+      margin-top: 15px;
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #212121, #000000);
+      color: #ffeb3b;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    button:hover {
+      background: linear-gradient(135deg, #000000, #333333);
+      transform: scale(1.05);
+      box-shadow: 0 0 12px #ffeb3b;
+    }
+    .output {
+      margin-top: 20px;
+      background: #1c1c1c;
+      padding: 15px;
+      border-radius: 10px;
+      border: 2px solid #444;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.8);
+      color: #f5f5f5;
+      font-family: monospace;
+      white-space: pre-wrap;
+    }
+  </style>
 </head>
 <body>
 
-    <h1>🦇 Mini Project: Fruit & Number Analyzer 🦇</h1>
-    <div class="box">
-        <label>Name:</label>
-        <input type="text" id="name">
+  <h1>🦇 Mini Project: Fruit & Number Analyzer 🦇</h1>
+  <div class="box">
+      <label>Enter your name:</label>
+      <input type="text" id="bruce">
 
-        <label>Number:</label>
-        <input type="number" id="number">
+      <label>Enter a number:</label>
+      <input type="number" id="signal">
 
-        <label>Sentence:</label>
-        <input type="text" id="sentence">
+      <label>Enter a short sentence:</label>
+      <input type="text" id="alfred">
 
-        <label>Favorite Fruit #1:</label>
-        <input type="text" id="fruit1">
+      <label>Enter your favorite fruit #1:</label>
+      <input type="text" id="batarang">
 
-        <label>Favorite Fruit #2:</label>
-        <input type="text" id="fruit2">
+      <label>Enter your favorite fruit #2:</label>
+      <input type="text" id="batmobile">
 
-        <label>Favorite Fruit #3:</label>
-        <input type="text" id="fruit3">
+      <label>Enter your   favorite fruit #3:</label>
+      <input type="text" id="grapnel">
 
-        <button onclick="showResults()">Analyze</button>
-        <button onclick="clearResults()">Clear</button>
+      <button onclick="batResults()">Click</button>
+      <button onclick="clearCave()">Clear</button>
 
-        <div class="output" id="results">...</div>
-    </div>
+      <div class="output" id="batcave">-------------------- Result here --------------------</div>
+  </div>
 
-    <script>
-        const BASE_NUMBER = 10;
+  <script>
+    const BAT_BASE = 10;
 
-        function greet(userName) {
-            return `Greetings, ${userName}. Gotham needs you.`;
+    function batGreet(bruce) {
+      return `Hello, ${bruce}!`;
+    }
+
+    function batResults() {
+      let bruce = document.getElementById("bruce").value;
+      let signal = Number(document.getElementById("signal").value);
+      let alfred = document.getElementById("alfred").value;
+
+      let batarang = document.getElementById("batarang").value;
+      let batmobile = document.getElementById("batmobile").value;
+      let grapnel = document.getElementById("grapnel").value;
+      let gadgets = [batarang, batmobile, grapnel];
+
+      let output = "";
+
+      output += "1. Variables & Constants, Arithmetic:\n";
+      output += `Base: ${BAT_BASE}, Signal: ${signal}\n`;
+      output += `${BAT_BASE} + ${signal} = ${BAT_BASE + signal}\n`;
+      output += `${BAT_BASE} - ${signal} = ${BAT_BASE - signal}\n`;
+      output += `${BAT_BASE} × ${signal} = ${BAT_BASE * signal}\n`;
+      output += `${BAT_BASE} ÷ ${signal} = ${signal !== 0 ? BAT_BASE / signal : "undefined (division by 0)"}\n\n`;
+
+      output += "2. Strings & String Method:\n";
+      output += "Uppercase: " + alfred.toUpperCase() + "\n";
+      output += "Lowercase: " + alfred.toLowerCase() + "\n\n";
+
+      output += "3. If Statement &  Ternary Operator:\n";
+      if (signal >= 0) {
+        output += signal + " is Positive\n";
+      } else {
+        output += signal + " is Negative\n";
+      }
+      output += (signal >= 0) ? signal + " is Positive\n\n" : signal + " is Negative\n\n";
+
+      output += "4. Loops (1 to " + signal + "):\n";
+      output += "For loop: ";
+      for (let i = 1; i <= signal; i++) {
+        output += i + " ";
+      }
+      output += "\n";
+      output += "While loop: ";
+      let count = 5;
+        while (count >= 1) {
+          output += count + " ";
+          count--;
         }
 
-        function showResults() {
-            let userName = document.getElementById("name").value;
-            let userNumber = Number(document.getElementById("number").value);
-            let userSentence = document.getElementById("sentence").value;
 
-            let fruit1 = document.getElementById("fruit1").value;
-            let fruit2 = document.getElementById("fruit2").value;
-            let fruit3 = document.getElementById("fruit3").value;
-            let fruits = [fruit1, fruit2, fruit3];
+      output += "\n\n";
 
-            let output = "";
+      output += "5. Functions & Arrays:\n";
+      output += batGreet(bruce) + "\n";
+      output += "Favorite fruits: " + gadgets.join(", ");
 
-            output += "🦇 1. Variables & Arithmetic:\n";
-            output += `Base Number: ${BASE_NUMBER}, User Number: ${userNumber}\n`;
-            output += `${BASE_NUMBER} + ${userNumber} = ${BASE_NUMBER + userNumber}\n`;
-            output += `${BASE_NUMBER} - ${userNumber} = ${BASE_NUMBER - userNumber}\n`;
-            output += `${BASE_NUMBER} × ${userNumber} = ${BASE_NUMBER * userNumber}\n`;
-            output += `${BASE_NUMBER} ÷ ${userNumber} = ${userNumber !== 0 ? BASE_NUMBER / userNumber : "undefined (division by 0)"}\n\n`;
+      document.getElementById("batcave").innerText = output;
+    }
 
-            output += "💬 2. Strings & Methods:\n";
-            output += "Uppercase: " + userSentence.toUpperCase() + "\n";
-            output += "Lowercase: " + userSentence.toLowerCase() + "\n\n";
-
-            output += "⚖️ 3. If & Ternary:\n";
-            if (userNumber >= 0) {
-                output += userNumber + " is Positive\n";
-            } else {
-                output += userNumber + " is Negative\n";
-            }
-            output += (userNumber >= 0) ? userNumber + " is Positive\n\n" : userNumber + " is Negative\n\n";
-
-            output += "🔢 4. Loops (1 to " + userNumber + "):\n";
-            for (let i = 1; i <= userNumber; i++) {
-                output += i + " ";
-            }
-            output += "\n\n";
-
-            output += "🍎 5. Functions & Arrays:\n";
-            output += greet(userName) + "\n";
-            output += "Favorite fruits: " + fruits.join(", ");
-
-            document.getElementById("results").innerText = output;
-        }
-
-        function clearResults() {
-            document.getElementById("results").innerText = "...";
-            document.getElementById("name").value = "";
-            document.getElementById("number").value = "";
-            document.getElementById("sentence").value = "";
-            document.getElementById("fruit1").value = "";
-            document.getElementById("fruit2").value = "";
-            document.getElementById("fruit3").value = "";
-        }
-    </script>
+    function clearCave() {
+      document.getElementById("batcave").innerText = "...";
+      document.getElementById("bruce").value = "";
+      document.getElementById("signal").value = "";
+      document.getElementById("alfred").value = "";
+      document.getElementById("batarang").value = "";
+      document.getElementById("batmobile").value = "";
+      document.getElementById("grapnel").value = "";
+    }
+  </script>
 </body>
 </html>
